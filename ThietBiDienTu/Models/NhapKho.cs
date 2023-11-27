@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ThietBiDienTu.Models
 {
+    [Table("NhapKho")]
     public class NhapKho
     {
         [Key]

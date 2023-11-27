@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ThietBiDienTu.Models
 {
+    [Table("HangHoa")]
     public class HangHoa
     {
         [Key]
