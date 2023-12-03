@@ -33,13 +33,13 @@ namespace ThietBiDienTu.Controllers
             }
             return View(hangHoa);
         }
-        public async Task<IActionResult> Edit(string hh)
+        public async Task<IActionResult> Edit(string id)
         {
-            if(hh == null || _context.HangHoa == null)
+            if(id == null || _context.HangHoa == null)
             {
                 return NotFound();
             }
-            var hangHoa = await _context.HangHoa.FindAsync(hh);
+            var hangHoa = await _context.HangHoa.FindAsync(id);
             if(hangHoa == null)
             {
                 return NotFound();
@@ -48,9 +48,9 @@ namespace ThietBiDienTu.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string hh, [Bind("MaHH, TenHH, HangSX, XuatXu, DonGia")] HangHoa hangHoa)
+        public async Task<IActionResult> Edit(string id, [Bind("MaHH, TenHH, HangSX, XuatXu, DonGia")] HangHoa hangHoa)
         {
-            if(hh != hangHoa.MaHH)
+            if(id != hangHoa.MaHH)
             {
                 return NotFound();
             }
@@ -76,13 +76,13 @@ namespace ThietBiDienTu.Controllers
             }
             return View(hangHoa);
         }
-        public async Task<IActionResult> Delete(string hh)
+        public async Task<IActionResult> Delete(string id)
         {
-            if(hh == null || _context.HangHoa == null)
+            if(id == null || _context.HangHoa == null)
             {
                 return NotFound();
             }
-            var hangHoa = await _context.HangHoa.FirstOrDefaultAsync(m => m.MaHH == hh);
+            var hangHoa = await _context.HangHoa.FirstOrDefaultAsync(m => m.MaHH == id);
             if(hangHoa == null)
             {
                 return NotFound();
@@ -91,13 +91,13 @@ namespace ThietBiDienTu.Controllers
         }
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string hh)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             if(_context.HangHoa == null)
             {
                 return Problem("Entity set 'ApplicationDbContext.HangHoa' is null.");
             }
-            var hangHoa =  await _context.HangHoa.FindAsync(hh);
+            var hangHoa =  await _context.HangHoa.FindAsync(id);
             if(hangHoa != null)
             {
                 _context.HangHoa.Remove(hangHoa);
@@ -105,9 +105,9 @@ namespace ThietBiDienTu.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-        private bool HangHoaExists(string hh)
+        private bool HangHoaExists(string id)
         {
-            return (_context.HangHoa?.Any(e => e.MaHH == hh)).GetValueOrDefault();
+            return (_context.HangHoa?.Any(e => e.MaHH == id)).GetValueOrDefault();
         }
     }
 }
