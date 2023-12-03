@@ -23,7 +23,7 @@ namespace ThietBiDienTu.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MaHH, TenHH, ThongTinHH")] HangHoa hangHoa)
+        public async Task<IActionResult> Create([Bind("MaHH, TenHH, HangSX, XuatXu, DonGia")] HangHoa hangHoa)
         {
             if(ModelState.IsValid)
             {
@@ -39,18 +39,18 @@ namespace ThietBiDienTu.Controllers
             {
                 return NotFound();
             }
-            var hanghoa = await _context.HangHoa.FindAsync(hh);
-            if(hanghoa == null)
+            var hangHoa = await _context.HangHoa.FindAsync(hh);
+            if(hangHoa == null)
             {
                 return NotFound();
             }
-            return View(hanghoa);
+            return View(hangHoa);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string hh, [Bind("MaHH, TenHH, ThongTinHH")] HangHoa hanghoa)
+        public async Task<IActionResult> Edit(string hh, [Bind("MaHH, TenHH, HangSX, XuatXu, DonGia")] HangHoa hangHoa)
         {
-            if(hh != hanghoa.MaHH)
+            if(hh != hangHoa.MaHH)
             {
                 return NotFound();
             }
@@ -58,12 +58,12 @@ namespace ThietBiDienTu.Controllers
             {
                 try
                 {
-                    _context.Update(hanghoa);
+                    _context.Update(hangHoa);
                     await _context.SaveChangesAsync();
                 }
                 catch(DbUpdateConcurrencyException)
                 {
-                    if(!HangHoaExists(hanghoa.MaHH))
+                    if(!HangHoaExists(hangHoa.MaHH))
                     {
                         return NotFound();
                     }
@@ -74,7 +74,7 @@ namespace ThietBiDienTu.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(hanghoa);
+            return View(hangHoa);
         }
         public async Task<IActionResult> Delete(string hh)
         {
@@ -82,14 +82,13 @@ namespace ThietBiDienTu.Controllers
             {
                 return NotFound();
             }
-            var hanghoa = await _context.HangHoa.FirstOrDefaultAsync(m => m.MaHH == hh);
-            if(hanghoa == null)
+            var hangHoa = await _context.HangHoa.FirstOrDefaultAsync(m => m.MaHH == hh);
+            if(hangHoa == null)
             {
                 return NotFound();
             }
-            return View(hanghoa);
+            return View(hangHoa);
         }
-        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string hh)
@@ -98,10 +97,10 @@ namespace ThietBiDienTu.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.HangHoa' is null.");
             }
-            var hanghoa = await _context.HangHoa.FindAsync(hh);
-            if(hanghoa != null)
+            var hangHoa =  await _context.HangHoa.FindAsync(hh);
+            if(hangHoa != null)
             {
-                _context.HangHoa.Remove(hanghoa);
+                _context.HangHoa.Remove(hangHoa);
             }
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

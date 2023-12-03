@@ -15,8 +15,10 @@ namespace ThietBiDienTu.Migrations
                 columns: table => new
                 {
                     MaHH = table.Column<string>(type: "TEXT", nullable: false),
-                    TenHH = table.Column<string>(type: "TEXT", nullable: true),
-                    ThongTinHH = table.Column<string>(type: "TEXT", nullable: true)
+                    TenHH = table.Column<string>(type: "TEXT", nullable: false),
+                    HangSX = table.Column<string>(type: "TEXT", nullable: false),
+                    XuatXu = table.Column<string>(type: "TEXT", nullable: false),
+                    DonGia = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

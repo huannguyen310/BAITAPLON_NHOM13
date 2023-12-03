@@ -7,11 +7,11 @@ namespace ThietBiDienTu.Models
     public class NhanVien
     {
         [Key]
-        [Required(ErrorMessage = "Mã nhân viên không được để trống!")]
-        public string? MaNV { get; set; }
-        [Required(ErrorMessage = "Tên nhân viên không được để trống!")]
-        public string? TenNV { get; set; }
-        public string? DiaChi { get; set; }
-        public int SDT { get; set; }
+        public string MaNV { get; set; }
+        public string TenNV { get; set; }
+        public string ChucVu { get; set; }
+        public string DiaChi { get; set; }
+        public string SDT { get; set; }
+        public string TKNH { get; set; }
     }
 }

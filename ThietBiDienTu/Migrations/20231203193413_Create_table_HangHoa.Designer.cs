@@ -10,7 +10,7 @@ using ThietBiDienTu.Data;
 namespace ThietBiDienTu.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231127103944_Create_table_HangHoa")]
+    [Migration("20231203193413_Create_table_HangHoa")]
     partial class Create_table_HangHoa
     {
         /// <inheritdoc />
@@ -24,10 +24,19 @@ namespace ThietBiDienTu.Migrations
                     b.Property<string>("MaHH")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("TenHH")
+                    b.Property<int>("DonGia")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("HangSX")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ThongTinHH")
+                    b.Property<string>("TenHH")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("XuatXu")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("MaHH");

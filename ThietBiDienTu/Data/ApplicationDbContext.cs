@@ -7,6 +7,6 @@ namespace ThietBiDienTu.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {}
-        public DbSet<HangHoa> HangHoa { get; set;}
+        public DbSet<HangHoa> HangHoa { get; set; }
     }
 }

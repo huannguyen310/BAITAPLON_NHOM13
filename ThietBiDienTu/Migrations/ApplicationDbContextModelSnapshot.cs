@@ -21,10 +21,19 @@ namespace ThietBiDienTu.Migrations
                     b.Property<string>("MaHH")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("TenHH")
+                    b.Property<int>("DonGia")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("HangSX")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ThongTinHH")
+                    b.Property<string>("TenHH")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("XuatXu")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("MaHH");
