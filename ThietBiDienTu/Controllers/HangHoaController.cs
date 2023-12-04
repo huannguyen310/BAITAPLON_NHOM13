@@ -17,6 +17,21 @@ namespace ThietBiDienTu.Controllers
             var model = await _context.HangHoa.ToListAsync();
             return View(model);
         }
+        public async Task<IActionResult> Details(string id)
+        {
+            if (id == null || _context.HangHoa == null)
+            {
+                return NotFound();
+            }
+
+            var hangHoa = await _context.HangHoa.FirstOrDefaultAsync(m => m.MaHH == id);
+            if (hangHoa == null)
+            {
+                return NotFound();
+            }
+
+            return View(hangHoa);
+        }
         public IActionResult Create()
         {
             return View();
