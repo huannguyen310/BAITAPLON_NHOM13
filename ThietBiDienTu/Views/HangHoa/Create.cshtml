@@ -4,48 +4,48 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>HangHoa</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="w3-row">
+    <b>HANG HOA/CREATE</b>
+    <a class="w3-btn w3-round w3-border w3-teal w3-right" asp-action="Index">Back</a>
+</div>
+<hr>
+<div class="max-width-40 ud-center">
+    <div class="w3-container w3-teal">
+        <h2>Them moi hang hoa</h2>
+    </div>
+    <form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="w3-container w3-card-4 w3-padding"></div>
+        <div class="w3-row">
             <div class="form-group">
                 <label asp-for="MaHH" class="control-label"></label>
-                <input asp-for="MaHH" class="form-control" />
+                <input asp-for="MaHH" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="MaHH" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="w3-col-l3">
                 <label asp-for="TenHH" class="control-label"></label>
-                <input asp-for="TenHH" class="form-control" />
+                <input asp-for="TenHH" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="TenHH" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="w3-col-l3">
                 <label asp-for="HangSX" class="control-label"></label>
-                <input asp-for="HangSX" class="form-control" />
+                <input asp-for="HangSX" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="HangSX" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="w3-col-l3">
                 <label asp-for="XuatXu" class="control-label"></label>
-                <input asp-for="XuatXu" class="form-control" />
+                <input asp-for="XuatXu" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="XuatXu" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="w3-col-l3">
                 <label asp-for="DonGia" class="control-label"></label>
-                <input asp-for="DonGia" class="form-control" />
+                <input asp-for="DonGia" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="DonGia" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+        </div>
+        <div class="w3-margin-top">
+            <input type="submit" value="Save" class="btn btn-primary w3-border w3-teal" />
+        </div>
+    </form>
 </div>
 
 @section Scripts {
