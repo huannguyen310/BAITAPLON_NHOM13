@@ -1,0 +1,58 @@
+@model ThietBiDienTu.Models.NhanVien
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="w3-row">
+    <b>EMPLOYEE/CREATE</b>
+    <a class="w3-btn w3-round w3-border w3-teal w3-right" asp-action="Index">Back</a>
+</div>
+<hr>
+<div class="max-width-40 ud-center">
+    <div class="w3-container w3-teal">
+        <h2>Them moi nhan vien</h2>
+    </div>
+    <form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="w3-container w3-card-4 w3-padding"></div>
+        <div class="w3-row">
+            <div class="form-group">
+                <label asp-for="MaNV" class="control-label"></label>
+                <input asp-for="MaNV" class="w3-input w3-border w3-border-black w3-round" />
+                <span asp-validation-for="MaNV" class="text-danger"></span>
+            </div>
+            <div class="w3-col-l3">
+                <label asp-for="TenNV" class="control-label"></label>
+                <input asp-for="TenNV" class="w3-input w3-border w3-border-black w3-round" />
+                <span asp-validation-for="TenNV" class="text-danger"></span>
+            </div>
+            <div class="w3-col-l3">
+                <label asp-for="ChucVu" class="control-label"></label>
+                <input asp-for="ChucVu" class="w3-input w3-border w3-border-black w3-round" />
+                <span asp-validation-for="ChucVu" class="text-danger"></span>
+            </div>
+            <div class="w3-col-l3">
+                <label asp-for="DiaChi" class="control-label"></label>
+                <input asp-for="DiaChi" class="w3-input w3-border w3-border-black w3-round" />
+                <span asp-validation-for="DiaChi" class="text-danger"></span>
+            </div>
+            <div class="w3-col-l3">
+                <label asp-for="SDT" class="control-label"></label>
+                <input asp-for="SDT" class="w3-input w3-border w3-border-black w3-round" />
+                <span asp-validation-for="SDT" class="text-danger"></span>
+            </div>
+            <div class="w3-col-l3">
+                <label asp-for="TKNH" class="control-label"></label>
+                <input asp-for="TKNH" class="w3-input w3-border w3-border-black w3-round" />
+                <span asp-validation-for="TKNH" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="w3-margin-top">
+            <input type="submit" value="Save" class="btn btn-primary w3-border w3-teal" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

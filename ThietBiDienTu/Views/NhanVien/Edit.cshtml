@@ -1,0 +1,57 @@
+@model ThietBiDienTu.Models.NhanVien
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="w3-row">
+    <b>EMPLOYEE/EDIT</b>
+</div>
+<hr>
+<div class="max-width-40 ud-center">
+    <div class="w3-container w3-teal">
+        <h2>EMPLOYEE EDIT</h2>
+    </div>
+    <form asp-action="Edit" class="w3-container w3-card-4 w3-padding">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="w3-row">
+            <div class="w3-col-l3">
+                <label asp-for="MaNV" class="control-label"></label>
+                <input asp-for="MaNV" class="form-control" />
+                <span asp-validation-for="MaNV" class="text-danger"></span>
+            </div>
+            <div class="w3-col-l3">
+                <label asp-for="TenNV" class="control-label"></label>
+                <input asp-for="TenNV" class="form-control" />
+                <span asp-validation-for="TenNV" class="text-danger"></span>
+            </div>
+            <div class="w3-col-l3">
+                <label asp-for="ChucVu" class="control-label"></label>
+                <input asp-for="ChucVu" class="form-control" />
+                <span asp-validation-for="ChucVu" class="text-danger"></span>
+            </div>
+            <div class="w3-col-l3">
+                <label asp-for="DiaChi" class="control-label"></label>
+                <input asp-for="DiaChi" class="form-control" />
+                <span asp-validation-for="DiaChi" class="text-danger"></span>
+            </div>
+            <div class="w3-col-l3">
+                <label asp-for="SDT" class="control-label"></label>
+                <input asp-for="SDT" class="form-control" />
+                <span asp-validation-for="SDT" class="text-danger"></span>
+            </div>
+            <div class="w3-col-l3">
+                <label asp-for="TKNH" class="control-label"></label>
+                <input asp-for="TKNH" class="form-control" />
+                <span asp-validation-for="TKNH" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="w3-margin-top">
+            <input type="submit" value="Save" class="btn btn-primary w3-teal" /> |
+            <a asp-action="Index" class="btn btn-primary w3-teal">Back to List</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
