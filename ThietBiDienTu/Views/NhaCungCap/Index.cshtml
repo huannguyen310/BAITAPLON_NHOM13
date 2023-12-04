@@ -1,0 +1,59 @@
+@model IEnumerable<ThietBiDienTu.Models.NhaCungCap>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="w3-row">
+    <b>NHA CUNG CAP LIST</b>
+    <a class="w3-right w3-big w3-btn w3-round w3-border w3-teal" asp-action="Create">Create New</a>
+</div>
+<hr>
+<table class="w3-container w3-table w3-striped w3-border w3-centered test w3-hoverable">
+    <thead>
+        <tr class="w3-teal">
+            <th>
+                @Html.DisplayNameFor(model => model.MaNCC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenNCC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiaChi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SDT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>Option</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model){
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaNCC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenNCC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaChi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SDT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MaNCC">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.MaNCC">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.MaNCC">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
