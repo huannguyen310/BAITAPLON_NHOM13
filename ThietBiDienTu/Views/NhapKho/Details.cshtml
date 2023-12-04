@@ -1,0 +1,42 @@
+@model ThietBiDienTu.Models.NhapKho
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>NhapKho</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HangHoa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HangHoa.MaHH)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NgayNhapKho)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NgayNhapKho)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NhaCungCap)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NhaCungCap.MaNCC)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.MaNhapKho">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
