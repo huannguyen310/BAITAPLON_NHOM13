@@ -11,5 +11,6 @@ namespace ThietBiDienTu.Data
         public DbSet<KhachHang> KhachHang { get; set; }
         public DbSet<NhaCungCap> NhaCungCap { get; set; }
         public DbSet<NhanVien> NhanVien { get; set; }
+        public DbSet<NhapKho> NhapKho { get; set; }
     }
 }
