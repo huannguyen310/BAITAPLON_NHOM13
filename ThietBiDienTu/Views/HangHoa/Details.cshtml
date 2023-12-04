@@ -1,0 +1,56 @@
+@model ThietBiDienTu.Models.HangHoa
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="w3-row">
+    <b>DETAILS/HANGHOA</b>
+</div>
+<hr>
+<div class="max-width-40 ud-center">
+    <div class="w3-container w3-teal">
+        <h2>Information</h2>
+    </div>
+    <form asp-action="Details" class="w3-container w3-card-4 w3-padding">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="w3-row">
+            <dl class="row">
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.MaHH)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.MaHH)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.TenHH)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.TenHH)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.HangSX)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.HangSX)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.XuatXu)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.XuatXu)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.DonGia)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.DonGia)
+                </dd>
+            </dl>
+        </div>
+        <div class="w3-margin-top">
+            <a asp-action="Edit" asp-route-id="@Model?.MaHH" class="btn btn-danger w3-border w3-teal">Edit</a> |
+            <a asp-action="Index" class="btn btn-danger w3-border w3-teal">Back to List</a>
+        </div>
+    </form>
+</div>
