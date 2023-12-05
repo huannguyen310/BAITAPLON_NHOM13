@@ -4,45 +4,45 @@
     ViewData["Title"] = "Edit";
 }
 <div class="w3-row">
-    <b>NHACUNGCAP/EDIT</b>
+    <h1>CHỈNH SỬA THÔNG TIN NHÀ CUNG CẤP</h1>
 </div>
 <hr>
 <div class="max-width-40 ud-center">
     <div class="w3-container w3-teal">
-        <h2>NHA CUNG CAP EDIT</h2>
+        <h2>Thông tin chỉnh sửa</h2>
     </div>
     <form asp-action="Edit" class="w3-container w3-card-4 w3-padding">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="w3-row">
             <div class="w3-col-l3">
-                <label asp-for="MaNCC" class="control-label"></label>
+                <label asp-for="MaNCC" class="control-label">Mã NCC</label>
                 <input asp-for="MaNCC" class="form-control" />
                 <span asp-validation-for="MaNCC" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="TenNCC" class="control-label"></label>
+                <label asp-for="TenNCC" class="control-label">Tên NCC</label>
                 <input asp-for="TenNCC" class="form-control" />
                 <span asp-validation-for="TenNCC" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="DiaChi" class="control-label"></label>
+                <label asp-for="DiaChi" class="control-label">Địa chỉ</label>
                 <input asp-for="DiaChi" class="form-control" />
                 <span asp-validation-for="DiaChi" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="SDT" class="control-label"></label>
+                <label asp-for="SDT" class="control-label">Số điện thoại</label>
                 <input asp-for="SDT" class="form-control" />
                 <span asp-validation-for="SDT" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="Email" class="control-label"></label>
+                <label asp-for="Email" class="control-label">Email</label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
         </div>
         <div class="w3-margin-top">
             <input type="submit" value="Save" class="btn btn-primary w3-teal" /> |
-            <a asp-action="Index" class="btn btn-primary w3-teal">Back to List</a>
+            <a asp-action="Index" class="btn btn-primary w3-teal">Trở lại</a>
         </div>
     </form>
 </div>

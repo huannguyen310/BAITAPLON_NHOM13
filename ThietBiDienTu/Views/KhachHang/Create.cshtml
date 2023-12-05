@@ -5,40 +5,40 @@
 }
 
 <div class="w3-row">
-    <b>KHACH HANG/CREATE</b>
-    <a class="w3-btn w3-round w3-border w3-teal w3-right" asp-action="Index">Back</a>
+    <h1>TẠO MỚI KHÁCH HÀNG</h1>
+    <a class="w3-btn w3-round w3-border w3-teal w3-right" asp-action="Index">Trở lại</a>
 </div>
 <hr>
 <div class="max-width-40 ud-center">
     <div class="w3-container w3-teal">
-        <h2>Them moi khach hang</h2>
+        <h2>Thêm mới khách hàng</h2>
     </div>
     <form asp-action="Create">
     <div asp-validation-summary="ModelOnly" class="w3-container w3-card-4 w3-padding"></div>
         <div class="w3-row">
             <div class="form-group">
-                <label asp-for="MaKH" class="control-label"></label>
+                <label asp-for="MaKH" class="control-label">Mã khách hàng</label>
                 <input asp-for="MaKH" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="MaKH" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="TenKH" class="control-label"></label>
+                <label asp-for="TenKH" class="control-label">Tên khách hàng</label>
                 <input asp-for="TenKH" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="TenKH" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="DiaChi" class="control-label"></label>
+                <label asp-for="DiaChi" class="control-label">Địa chỉ</label>
                 <input asp-for="DiaChi" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="DiaChi" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="SDT" class="control-label"></label>
+                <label asp-for="SDT" class="control-label">Số điện thoại</label>
                 <input asp-for="SDT" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="SDT" class="text-danger"></span>
             </div>
         </div>
         <div class="w3-margin-top">
-            <input type="submit" value="Save" class="btn btn-primary w3-border w3-teal" />
+            <input type="submit" value="Lưu" class="btn btn-primary w3-border w3-teal" />
         </div>
     </form>
 </div>
