@@ -5,45 +5,45 @@
 }
 
 <div class="w3-row">
-    <b>HANG HOA/CREATE</b>
-    <a class="w3-btn w3-round w3-border w3-teal w3-right" asp-action="Index">Back</a>
+    <b>THÊM MỚI HÀNG HÓA</b>
+    <a class="w3-btn w3-round w3-border w3-teal w3-right" asp-action="Index">Trở lại</a>
 </div>
 <hr>
 <div class="max-width-40 ud-center">
     <div class="w3-container w3-teal">
-        <h2>Them moi hang hoa</h2>
+        <h2>Thông tin của mặt hàng</h2>
     </div>
     <form asp-action="Create">
     <div asp-validation-summary="ModelOnly" class="w3-container w3-card-4 w3-padding"></div>
         <div class="w3-row">
             <div class="form-group">
-                <label asp-for="MaHH" class="control-label"></label>
+                <label asp-for="MaHH" class="control-label">Mã hàng hóa</label>
                 <input asp-for="MaHH" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="MaHH" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="TenHH" class="control-label"></label>
+                <label asp-for="TenHH" class="control-label">Tên hàng hóa</label>
                 <input asp-for="TenHH" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="TenHH" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="HangSX" class="control-label"></label>
+                <label asp-for="HangSX" class="control-label">Hãng sản xuất</label>
                 <input asp-for="HangSX" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="HangSX" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="XuatXu" class="control-label"></label>
+                <label asp-for="XuatXu" class="control-label">Xuất xứ</label>
                 <input asp-for="XuatXu" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="XuatXu" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="DonGia" class="control-label"></label>
+                <label asp-for="DonGia" class="control-label">Đơn giá</label>
                 <input asp-for="DonGia" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="DonGia" class="text-danger"></span>
             </div>
         </div>
         <div class="w3-margin-top">
-            <input type="submit" value="Save" class="btn btn-primary w3-border w3-teal" />
+            <input type="submit" value="Lưu" class="btn btn-primary w3-border w3-teal" />
         </div>
     </form>
 </div>

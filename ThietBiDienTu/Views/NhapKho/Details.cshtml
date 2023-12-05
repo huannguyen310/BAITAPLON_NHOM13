@@ -4,39 +4,48 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<div class="w3-row">
+    <b>DETAILS/NHAPKHO</b>
+</div>
+<hr>
+<div class="max-width-40 ud-center">
+    <div class="w3-container w3-teal">
+        <h2>Information</h2>
+    </div>
+    <form asp-action="Details" class="w3-container w3-card-4 w3-padding">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="w3-row">
+            <dl class="row">
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.HangHoa)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.HangHoa.MaHH)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.SoLuong)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.SoLuong)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.NgayNhapKho)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.NgayNhapKho)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.NhaCungCap)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.NhaCungCap.MaNCC)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model?.MaNhapKho" class="btn btn-danger w3-border w3-teal">Edit</a> |
+            <a asp-action="Index" class="btn btn-danger w3-border w3-teal">Back to List</a>
+        </div>
+    </form>
+</div>
 
-<div>
-    <h4>NhapKho</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HangHoa)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HangHoa.MaHH)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SoLuong)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SoLuong)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NgayNhapKho)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NgayNhapKho)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NhaCungCap)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NhaCungCap.MaNCC)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.MaNhapKho">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
