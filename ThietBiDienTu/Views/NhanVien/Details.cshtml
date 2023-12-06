@@ -5,49 +5,49 @@
 }
 
 <div class="w3-row">
-    <b>DETAILS/EMPLOYEE</b>
+    <h1>THÔNG TIN NHÂN VIÊN</h1>
 </div>
 <hr>
 <div class="max-width-40 ud-center">
     <div class="w3-container w3-teal">
-        <h2>Information</h2>
+        <h2>Thông tin của nhân viên</h2>
     </div>
     <form asp-action="Details" class="w3-container w3-card-4 w3-padding">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="w3-row">
             <dl class="row">
                 <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.MaNV)
+                    Mã nhân viên:
                 </dt>
                 <dd class = "col-sm-10">
                     @Html.DisplayFor(model => model.MaNV)
                 </dd>
                 <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.TenNV)
+                    Tên nhân viên:
                 </dt>
                 <dd class = "col-sm-10">
                     @Html.DisplayFor(model => model.TenNV)
                 </dd>
                 <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.ChucVu)
+                    Chức vụ:
                 </dt>
                 <dd class = "col-sm-10">
                     @Html.DisplayFor(model => model.ChucVu)
                 </dd>
                 <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.DiaChi)
+                    Địa chỉ:
                 </dt>
                 <dd class = "col-sm-10">
                     @Html.DisplayFor(model => model.DiaChi)
                 </dd>
                 <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.SDT)
+                    Số điện thoại:
                 </dt>
                 <dd class = "col-sm-10">
                     @Html.DisplayFor(model => model.SDT)
                 </dd>
                 <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.TKNH)
+                    Tài khoản ngân hàng:
                 </dt>
                 <dd class = "col-sm-10">
                     @Html.DisplayFor(model => model.TKNH)
@@ -55,8 +55,8 @@
             </dl>
         </div>
         <div class="w3-margin-top">
-            <a asp-action="Edit" asp-route-id="@Model?.MaNV" class="btn btn-danger w3-border w3-teal">Edit</a> |
-            <a asp-action="Index" class="btn btn-danger w3-border w3-teal">Back to List</a>
+            <a asp-action="Edit" asp-route-id="@Model?.MaNV" class="btn btn-danger w3-border w3-teal">Chỉnh sửa</a> |
+            <a asp-action="Index" class="btn btn-danger w3-border w3-teal">Trở lại</a>
         </div>
     </form>
 </div>
