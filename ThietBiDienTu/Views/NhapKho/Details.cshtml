@@ -5,37 +5,37 @@
 }
 
 <div class="w3-row">
-    <b>DETAILS/NHAPKHO</b>
+    <h1>THÔNG TIN HÀNG NHẬP KHO</h1>
 </div>
 <hr>
 <div class="max-width-40 ud-center">
     <div class="w3-container w3-teal">
-        <h2>Information</h2>
+        <h2>Thông tin của hàng</h2>
     </div>
     <form asp-action="Details" class="w3-container w3-card-4 w3-padding">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="w3-row">
             <dl class="row">
                 <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.HangHoa)
+                    Mã hàng:
                 </dt>
                 <dd class = "col-sm-10">
                     @Html.DisplayFor(model => model.HangHoa.MaHH)
                 </dd>
                 <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.SoLuong)
+                    Số lượng:
                 </dt>
                 <dd class = "col-sm-10">
                     @Html.DisplayFor(model => model.SoLuong)
                 </dd>
                 <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.NgayNhapKho)
+                    Ngày nhập kho:
                 </dt>
                 <dd class = "col-sm-10">
                     @Html.DisplayFor(model => model.NgayNhapKho)
                 </dd>
                 <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.NhaCungCap)
+                    Nhà cung cấp:
                 </dt>
                 <dd class = "col-sm-10">
                     @Html.DisplayFor(model => model.NhaCungCap.MaNCC)
@@ -43,8 +43,8 @@
             </dl>
         </div>
         <div>
-            <a asp-action="Edit" asp-route-id="@Model?.MaNhapKho" class="btn btn-danger w3-border w3-teal">Edit</a> |
-            <a asp-action="Index" class="btn btn-danger w3-border w3-teal">Back to List</a>
+            <a asp-action="Edit" asp-route-id="@Model?.MaNhapKho" class="btn btn-danger w3-border w3-teal">Chỉnh sửa</a> |
+            <a asp-action="Index" class="btn btn-danger w3-border w3-teal">Trở lại</a>
         </div>
     </form>
 </div>

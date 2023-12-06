@@ -5,43 +5,43 @@
 }
 
 <div class="w3-row">
-    <b>NhapKho</b>
-    <a class="w3-btn w3-round w3-border w3-teal w3-right" asp-action="Index">Back</a>
+    <h1>NHẬP HÀNG VÀO KHO</h1>
+    <a class="w3-btn w3-round w3-border w3-teal w3-right" asp-action="Index">Trở lại</a>
 </div>
 <hr>
 <div class="max-width-40 ud-center">
     <div class="w3-container w3-teal">
-        <h2>Nhap hang vao kho</h2>
+        <h2>Thông tin hàng được nhập vào kho</h2>
     </div>
     <form asp-action="Create">
         <div asp-validation-summary="ModelOnly" class="w3-container w3-card-4 w3-padding"></div>
         <div class="w3-row">
             <div class="w3-col-l3">
-                <label asp-for="MaNhapKho" class="control-label"></label>
+                <label asp-for="MaNhapKho" class="control-label">Mã nhập kho</label>
                 <input asp-for="MaNhapKho" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="MaNhapKho" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="MaHH" class="control-label"></label>
+                <label asp-for="MaHH" class="control-label">Mã hàng</label>
                 <select asp-for="MaHH" class ="w3-input w3-border w3-border-black w3-round" asp-items="ViewBag.MaHH"></select>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="SoLuong" class="control-label"></label>
+                <label asp-for="SoLuong" class="control-label">Số lượng</label>
                 <input asp-for="SoLuong" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="SoLuong" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="NgayNhapKho" class="control-label"></label>
+                <label asp-for="NgayNhapKho" class="control-label">Ngày nhập kho</label>
                 <input asp-for="NgayNhapKho" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="NgayNhapKho" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="MaNCC" class="control-label"></label>
+                <label asp-for="MaNCC" class="control-label">Mã NCC</label>
                 <select asp-for="MaNCC" class ="w3-input w3-border w3-border-black w3-round" asp-items="ViewBag.MaNCC"></select>
             </div>
         </div>
         <div class="w3-margin-top">
-            <input type="submit" value="Save" class="btn btn-primary w3-border w3-teal" />
+            <input type="submit" value="Lưu" class="btn btn-primary w3-border w3-teal" />
         </div>
     </form>
 </div>

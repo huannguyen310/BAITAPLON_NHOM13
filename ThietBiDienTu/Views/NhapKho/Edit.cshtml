@@ -5,40 +5,40 @@
 }
 
 <div class="w3-row">
-    <b>NHAPKHO/EDIT</b>
+    <h1>CHỈNH SỬA THÔNG TIN HÀNG NHẬP KHO</h1>
 </div>
 <hr>
 <div class="max-width-40 ud-center">
     <div class="w3-container w3-teal">
-        <h2>NHAPKHO EDIT</h2>
+        <h2>Thông tin chỉnh sửa hàng nhập kho</h2>
     </div>
     <form asp-action="Edit" class="w3-container w3-card-4 w3-padding">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="w3-row">
             <div class="w3-col-l3">
-                <label asp-for="MaHH" class="control-label"></label>
+                <label asp-for="MaHH" class="control-label">Mã hàng</label>
                 <select asp-for="MaHH" class="form-control" asp-items="ViewBag.MaHH"></select>
                 <span asp-validation-for="MaHH" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="SoLuong" class="control-label"></label>
+                <label asp-for="SoLuong" class="control-label">Số lượng</label>
                 <input asp-for="SoLuong" class="form-control" />
                 <span asp-validation-for="SoLuong" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="NgayNhapKho" class="control-label"></label>
+                <label asp-for="NgayNhapKho" class="control-label">Ngày nhập kho</label>
                 <input asp-for="NgayNhapKho" class="form-control" />
                 <span asp-validation-for="NgayNhapKho" class="text-danger"></span>
             </div>
             <div class="w3-col-l3">
-                <label asp-for="MaNCC" class="control-label"></label>
+                <label asp-for="MaNCC" class="control-label">Mã NCC</label>
                 <select asp-for="MaNCC" class="form-control" asp-items="ViewBag.MaNCC"></select>
                 <span asp-validation-for="MaNCC" class="text-danger"></span>
             </div>
         </div>
         <div class="w3-margin-top">
-            <input type="submit" value="Save" class="btn btn-primary w3-teal" /> |
-            <a asp-action="Index" class="btn btn-primary w3-teal">Back to List</a>
+            <input type="submit" value="Lưu" class="btn btn-primary w3-teal" /> |
+            <a asp-action="Index" class="btn btn-primary w3-teal">Trở lại</a>
         </div>
     </form>
 </div>
