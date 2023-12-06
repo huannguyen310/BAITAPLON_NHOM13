@@ -3,40 +3,23 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<div class="w3-row">
+    <h1>DANH SÁCH HÀNG XUẤT KHO</h1>
+    <a class="w3-right w3-big w3-btn w3-round w3-border w3-teal" asp-action="Create">Xuất hàng</a>
+</div>
+<hr>
+<table class="w3-container w3-table w3-striped w3-border w3-centered test w3-hoverable">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.HangHoa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TenHH)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NhaCungCap)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TenNCC)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MaXuatKho)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayXuatKho)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TrangThai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KhachHang)
-            </th>
-            <th></th>
+        <tr class="w3-teal">
+            <th>Mã Hàng</th>
+            <th>Tên Hàng</th>
+            <th>Mã NCC</th>
+            <th>Tên NCC</th>
+            <th>Mã Xuất Kho</th>
+            <th>Ngày Xuất Kho</th>
+            <th>Trạng Thái</th>
+            <th>Khách Hàng</th>
+            <th>Tùy chọn</th>
         </tr>
     </thead>
     <tbody>
@@ -67,9 +50,9 @@
                 @Html.DisplayFor(modelItem => item.KhachHang.MaKH)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.MaHH">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.MaHH">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.MaHH">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.MaHH">Chỉnh sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.MaHH">Xem</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaHH">Xóa</a>
             </td>
         </tr>
 }

@@ -4,59 +4,63 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-
-<h4>XuatKho</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="MaHH" />
-            <div class="form-group">
-                <label asp-for="TenHH" class="control-label"></label>
+<div class="w3-row">
+    <h1>CHỈNH SỬA THÔNG TIN HÀNG XUẤT KHO</h1>
+</div>
+<hr>
+<div class="max-width-40 ud-center">
+    <div class="w3-container w3-teal">
+        <h2>Thông tin của hàng xuất kho</h2>
+    </div>
+    <form asp-action="Edit" class="w3-container w3-card-4 w3-padding">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="w3-row">
+            <div class="w3-col-l3">
+                <label asp-for="MaHH" class="control-label">Mã hàng</label>
+                <select asp-for="MaHH" class="form-control" asp-items="ViewBag.MaHH"></select>
+                <span asp-validation-for="MaHH" class="text-danger"></span>
+            </div>
+            <div class="w3-col-l3">
+                <label asp-for="TenHH" class="control-label">Tên hàng</label>
                 <input asp-for="TenHH" class="form-control" />
                 <span asp-validation-for="TenHH" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="MaNCC" class="control-label"></label>
+            <div class="w3-col-l3">
+                <label asp-for="MaNCC" class="control-label">Mã NCC</label>
                 <select asp-for="MaNCC" class="form-control" asp-items="ViewBag.MaNCC"></select>
                 <span asp-validation-for="MaNCC" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="TenNCC" class="control-label"></label>
+            <div class="w3-col-l3">
+                <label asp-for="TenNCC" class="control-label">Tên NCC</label>
                 <input asp-for="TenNCC" class="form-control" />
                 <span asp-validation-for="TenNCC" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="MaXuatKho" class="control-label"></label>
+            <div class="w3-col-l3">
+                <label asp-for="MaXuatKho" class="control-label">Mã xuất kho</label>
                 <input asp-for="MaXuatKho" class="form-control" />
                 <span asp-validation-for="MaXuatKho" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="NgayXuatKho" class="control-label"></label>
+            <div class="w3-col-l3">
+                <label asp-for="NgayXuatKho" class="control-label">Ngày xuất kho</label>
                 <input asp-for="NgayXuatKho" class="form-control" />
                 <span asp-validation-for="NgayXuatKho" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="TrangThai" class="control-label"></label>
+            <div class="w3-col-l3">
+                <label asp-for="TrangThai" class="control-label">Trạng thái</label>
                 <input asp-for="TrangThai" class="form-control" />
                 <span asp-validation-for="TrangThai" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="MaKH" class="control-label"></label>
+            <div class="w3-col-l3">
+                <label asp-for="MaKH" class="control-label">Khách hàng</label>
                 <select asp-for="MaKH" class="form-control" asp-items="ViewBag.MaKH"></select>
                 <span asp-validation-for="MaKH" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+        </div>
+        <div class="w3-margin-top">
+            <input type="submit" value="Lưu" class="btn btn-primary w3-teal" /> |
+            <a asp-action="Index" class="btn btn-primary w3-teal">Trở lại</a>
+        </div>
+    </form>
 </div>
 
 @section Scripts {
