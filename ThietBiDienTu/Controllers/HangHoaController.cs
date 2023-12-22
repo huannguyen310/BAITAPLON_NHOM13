@@ -2,12 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ThietBiDienTu.Data;
 using ThietBiDienTu.Models;
+using ThietBiDienTu.Models.Process;
 
 namespace ThietBiDienTu.Controllers
 {
     public class HangHoaController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private ExcelProcess _excelPro = new ExcelProcess();
         public HangHoaController(ApplicationDbContext context)
         {
             _context = context;
@@ -119,6 +121,52 @@ namespace ThietBiDienTu.Controllers
             }
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> Upload()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Upload(IFormFile file)
+        {
+            if(file != null)
+            {
+                string fileExtension = Path.GetExtension(file.FileName);
+                if(fileExtension != ".xls" && fileExtension != ".xlsx")
+                {
+                    ModelState.AddModelError("", "Please choose excel file to upload!");
+                }
+                else
+                {
+                    var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Uploads/Excels", "File" + DateTime.Now.Day + DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Millisecond + fileExtension);
+                    var fileLocation = new FileInfo(filePath).ToString();
+                    if (file.Length > 0)
+                        {
+                            using (var stream = new FileStream(filePath, FileMode.Create))
+                            {
+                                //save file to server
+                                await file.CopyToAsync(stream);
+                                //read data from file and write to database
+                                var dt = _excelPro.ExcelToDataTable(fileLocation);
+                                for(int i = 0; i < dt.Rows.Count; i++)
+                                {
+                                    var hanghoa = new HangHoa();
+                                    hanghoa.MaHH = dt.Rows[i][0].ToString();
+                                    hanghoa.TenHH = dt.Rows[i][0].ToString();
+                                    hanghoa.HangSX = dt.Rows[i][0].ToString();
+                                    hanghoa.XuatXu = dt.Rows[i][0].ToString();
+                                    hanghoa.DonGia = dt.Rows[i][0].GetHashCode();
+                                    _context.Add(hanghoa);
+                                }
+                                await _context.SaveChangesAsync();
+                                return RedirectToAction(nameof(Index));
+                            }
+                        }
+                }
+            }
+            return View();
         }
         private bool HangHoaExists(string id)
         {
