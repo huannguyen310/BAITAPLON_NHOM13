@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml;
 using ThietBiDienTu.Data;
 using ThietBiDienTu.Models;
 using ThietBiDienTu.Models.Process;
@@ -154,10 +155,10 @@ namespace ThietBiDienTu.Controllers
                                 {
                                     var hanghoa = new HangHoa();
                                     hanghoa.MaHH = dt.Rows[i][0].ToString();
-                                    hanghoa.TenHH = dt.Rows[i][0].ToString();
-                                    hanghoa.HangSX = dt.Rows[i][0].ToString();
-                                    hanghoa.XuatXu = dt.Rows[i][0].ToString();
-                                    hanghoa.DonGia = dt.Rows[i][0].GetHashCode();
+                                    hanghoa.TenHH = dt.Rows[i][1].ToString();
+                                    hanghoa.HangSX = dt.Rows[i][2].ToString();
+                                    hanghoa.XuatXu = dt.Rows[i][3].ToString();
+                                    hanghoa.DonGia = Convert.ToInt32(dt.Rows[i][4]);
                                     _context.Add(hanghoa);
                                 }
                                 await _context.SaveChangesAsync();
@@ -167,6 +168,23 @@ namespace ThietBiDienTu.Controllers
                 }
             }
             return View();
+        }
+        public IActionResult Download()
+        {
+            var fileName = "Danhsachhanghoa" + ".xlsx";
+            using(ExcelPackage excelPackage = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");
+                worksheet.Cells["A1"].Value = "Mã hàng";
+                worksheet.Cells["B1"].Value = "Tên hàng";
+                worksheet.Cells["C1"].Value = "Hãng SX";
+                worksheet.Cells["D1"].Value = "Xuất xứ";
+                worksheet.Cells["E1"].Value = "Đơn giá";
+                var hanghoaList = _context.HangHoa.ToList();
+                worksheet.Cells["A2"].LoadFromCollection(hanghoaList);
+                var stream = new MemoryStream(excelPackage.GetAsByteArray());
+                return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            }
         }
         private bool HangHoaExists(string id)
         {
