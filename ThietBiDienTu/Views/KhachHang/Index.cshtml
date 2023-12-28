@@ -1,4 +1,6 @@
 @model IEnumerable<ThietBiDienTu.Models.KhachHang>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
 
 @{
     ViewData["Title"] = "Index";
@@ -6,7 +8,8 @@
 
 <div class="w3-row">
     <h1>DANH SÁCH KHÁCH HÀNG</h1>
-    <a class="w3-right w3-big w3-btn w3-round w3-border w3-teal" asp-action="Create">Thêm mới</a>
+    <a class="w3-big w3-btn w3-round w3-border w3-teal" asp-action="Create">Thêm mới</a>
+    <a class="w3-big w3-btn w3-round w3-border w3-teal w3-right" asp-action="Download">Tải xuống danh sách</a>
 </div>
 <hr>
 <table class="w3-container w3-table w3-striped w3-border w3-centered test w3-hoverable">
@@ -43,3 +46,27 @@
         }
     </tbody>
 </table>
+<hr>
+@using (Html.BeginForm("Index", "KhachHang", FormMethod.Get, new { id = "form1"}))
+{
+    <div class="row">
+        <div class="col-md-11">
+            @Html.PagedListPager((IPagedList) Model, page => Url.Action("Index", new {page = page}),
+                new X.PagedList.Web.Common.PagedListRenderOptions { LiElementClasses = new string[] {"page-item"}, 
+                PageClasses = new string[] { "page-link" }})
+        </div>
+        <div class="col-md-1">
+            @Html.DropDownList("pageSize", null, new {@class="form-select"})
+        </div>
+    </div>
+}
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+    $(document).ready(function()
+    {
+        $("#pageSize").change(function()
+        {
+            $("#form1").submit();
+        });
+    });
+</script>

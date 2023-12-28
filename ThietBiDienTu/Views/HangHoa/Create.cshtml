@@ -6,14 +6,14 @@
 
 <div class="w3-row">
     <h1>THÊM MỚI HÀNG HÓA</h1>
-    <a class="w3-btn w3-round w3-border w3-teal w3-right" asp-action="Index">Trở lại</a>
-    <form asp-action="Upload" enctype="multipart/form-data">
+    <form asp-action="Upload" enctype="multipart/form-data" class="w3-btn">
         <div class="row form-control">
-            <label class="col-sm-2">Import data from Excel:</label>
-            <input type="file" name="file" class="col-sm-4">
-            <input type="submit" value="Upload" class="btn btn-primary col-sm-1">
+            <label class="col-sm-4">Tải dữ liệu lên từ máy:</label>
+            <input type="file" name="file" class="col-sm-5">
+            <input type="submit" value="Tải lên" class="w3-btn w3-round  w3-teal col-sm-2">
         </div>
     </form>
+    <a class="w3-btn w3-round w3-border w3-teal w3-right" asp-action="Index">Trở lại</a>
 </div>
 <hr>
 <div class="max-width-40 ud-center">
@@ -50,7 +50,7 @@
             </div>
         </div>
         <div class="w3-margin-top">
-            <input type="submit" value="Lưu" class="btn btn-primary w3-border w3-teal" />
+            <input type="submit" value="Lưu" class="w3-btn w3-round w3-border w3-teal" />
         </div>
     </form>
 </div>

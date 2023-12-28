@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
 using ThietBiDienTu.Data;
 using ThietBiDienTu.Models;
 using ThietBiDienTu.Models.Process;
+using X.PagedList;
 
 namespace ThietBiDienTu.Controllers
 {
@@ -15,9 +17,20 @@ namespace ThietBiDienTu.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page, int? PageSize)
         {
-            var model = await _context.HangHoa.ToListAsync();
+            ViewBag.PageSize = new List<SelectListItem>()
+            {
+                new SelectListItem() { Value = "3", Text = "3"},
+                new SelectListItem() { Value = "5", Text = "5"},
+                new SelectListItem() { Value = "10", Text = "10"},
+                new SelectListItem() { Value = "15", Text = "15"},
+                new SelectListItem() { Value = "20", Text = "20"},
+                new SelectListItem() { Value = "25", Text = "25"}
+            };
+            int pagesize = (PageSize ?? 5);
+            ViewBag.psize = pagesize;
+            var model = _context.HangHoa.ToList().ToPagedList(page ?? 1, pagesize);
             return View(model);
         }
         public async Task<IActionResult> Details(string id)

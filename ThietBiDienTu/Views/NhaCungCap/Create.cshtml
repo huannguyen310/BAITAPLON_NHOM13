@@ -6,6 +6,13 @@
 
 <div class="w3-row">
     <h1>THÊM MỚI NHÀ CUNG CẤP</h1>
+    <form asp-action="Upload" enctype="multipart/form-data" class="w3-btn">
+        <div class="row form-control">
+            <label class="col-sm-4">Tải dữ liệu lên từ máy:</label>
+            <input type="file" name="file" class="col-sm-5">
+            <input type="submit" value="Tải lên" class="w3-btn w3-round  w3-teal col-sm-2">
+        </div>
+    </form>
     <a class="w3-btn w3-round w3-border w3-teal w3-right" asp-action="Index">Trở lại</a>
 </div>
 <hr>
@@ -38,7 +45,7 @@
             </div>
             <div class="w3-col-l3">
                 <label asp-for="Email" class="control-label">Email</label>
-                <input asp-for="Email" class="w3-input w3-border w3-border-black w3-round" />
+                <input type="email" name="Email" class="w3-input w3-border w3-border-black w3-round" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
         </div>
